@@ -6,8 +6,8 @@ import connectDB from "./config/db.js";
 import authRoute from "./routes/authRoute.js";
 import categoryRoute from "./routes/categoryRoute.js";
 import productRoute from "./routes/productRoute.js"
-import cors from 'cors';
-import path from 'path';
+import cors from 'cors'
+import path from 'path'
 
 //configure env
 dotenv.config();
@@ -15,26 +15,22 @@ dotenv.config();
 connectDB();
 
 const app= express();
-const __dirname = path.resolve();
 
 //middlewares
 app.use(express.json())
 app.use(morgan('dev'))
 app.use(express(path.join(__dirname, '../frontend/build')))
+
 //routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 
 //rest api
-// app.use("*",function(req,res){
-//     res.sendFile(path.join(__dirname, '../frontend/build/index.html'));
-// });
-
-app.get('*', function (req, res) {
-  const index = path.join(__dirname, 'build', '../frontend/build/index.html');
-  res.sendFile(index);
-});
+app.use('*', function (req, res) {
+    const index = path.join(__dirname, 'build', '../frontend/build/index.html');
+    res.sendFile(index);
+  });
 
 const PORT=process.env.PORT || 8080;
 
