@@ -32,8 +32,8 @@ app.use("/api/v1/product", productRoute);
 
 //rest api
 app.use('*', function (req, res) {
-    const index = path.dirname('../html/frontend/build/index.html');
-    res.sendFile('index.html', { root: index });
+    const index = path.dirname('../frontend/build/index.html');
+    res.sendFile('index.html', { root: __dirname });
   });
 
 const PORT=process.env.PORT || 8080;
