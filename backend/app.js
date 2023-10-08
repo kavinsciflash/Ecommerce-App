@@ -32,7 +32,7 @@ app.use("/api/v1/product", productRoute);
 
 //rest api
 app.use('*', function (req, res) {
-    const index = path.dirname(path.resolve('../frontend/build/index.html'));
+    const index = path.resolve('../frontend/build/index.html');
     res.sendFile(index, { root: __dirname });
   });
 
