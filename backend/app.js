@@ -33,7 +33,7 @@ app.use("/api/v1/product", productRoute);
 //rest api
 app.use('*', function (req, res) {
     const index = path.dirname('../frontend/build/index.html');
-    res.sendFile(index);
+    res.sendFile('index.html', { root: index });
   });
 
 const PORT=process.env.PORT || 8080;
