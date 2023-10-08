@@ -9,7 +9,7 @@ import productRoute from "./routes/productRoute.js"
 import cors from 'cors'
 import path from 'path'
 import { fileURLToPath } from 'url'
-const router= express.Router()
+const route= express.Router()
 
 //configure env
 dotenv.config();
