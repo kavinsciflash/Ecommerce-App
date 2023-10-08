@@ -17,13 +17,13 @@ dotenv.config();
 connectDB();
 
 const app= express();
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
 
 //middlewares
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express(path.join(__dirname, '../frontend/build')))
+// app.use(express(path.join(__dirname, '../frontend/build')))
 
 //routes
 app.use("/api/v1/auth", authRoute);
@@ -31,11 +31,11 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 
 //rest api
-app.use('*', function (req, res) {
-    const index = path.dirname('../frontend/build/index.html');
+// app.use('*', function (req, res) {
+//     const index = path.dirname('../frontend/build/index.html');
     // res.sendFile('../frontend/build/index.html', { root: __dirname });
-    res.sendFile(path.resolve('../frontend/build/index.html'));
-  });
+  //   res.sendFile(path.resolve('../frontend/build/index.html'));
+  // });
 
 const PORT=process.env.PORT || 8080;
 
