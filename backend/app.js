@@ -20,7 +20,7 @@ const __dirname = path.resolve();
 //middlewares
 app.use(express.json())
 app.use(morgan('dev'))
-app.use(express(path.join(__dirname, '../frontend/build')))
+app.use(express(path.join(__dirname, 'build')))
 //routes
 app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoute);
