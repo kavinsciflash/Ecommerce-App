@@ -31,7 +31,7 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 
 app.use(cors({
-    origin:["https://ecommerce-app-pink-two.vercel.app"],
+    origin:[""],
     methods:["POST","GET"],
     credentials:true
 }));
