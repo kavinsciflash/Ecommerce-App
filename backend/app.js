@@ -31,13 +31,15 @@ app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 
 //rest api
-app.get('/', function (req, res) {
+// app.get('/', function (req, res) {
     // let indexPath = path.join(__dirname, "../frontend/build/index.html");
     // res.sendFile(indexPath);
-    res.sendFile('../frontend/build/index.html', { root: __dirname });
-  });
+    // res.sendFile('../frontend/build/index.html', { root: __dirname });
+  // });
 
-
+route.get("/", function(request, response) {
+  response.sendFile(__dirname + "./frontend/build/index.html");
+});
 
 
 
