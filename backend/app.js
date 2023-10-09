@@ -30,6 +30,12 @@ app.use("/api/v1/auth", authRoute);
 app.use("/api/v1/category", categoryRoute);
 app.use("/api/v1/product", productRoute);
 
+app.use(cors({
+    origin:["https://ecommerce-app-pink-two.vercel.app"],
+    methods:["POST","GET"],
+    credentials:true
+}));
+
 //rest api
 // app.get('/', function (req, res) {
     // let indexPath = path.join(__dirname, "../frontend/build/index.html");
