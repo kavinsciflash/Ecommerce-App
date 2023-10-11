@@ -1,6 +1,5 @@
 {
   "name": "frontend",
-  "proxy": "https://mernappbackend-g396.onrender.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
